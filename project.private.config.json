@@ -1,0 +1,26 @@
+{
+  "miniprogramRoot": "./",
+  "projectname": "catch-gold-miniprogram",
+  "description": "接宝小游戏（接金币）—— 微信小程序 Canvas 版本",
+  "appid": "touristappid",
+  "setting": {
+    "urlCheck": false,
+    "coverView": true,
+    "lazyloadPlaceholderEnable": false,
+    "skylineRenderEnable": false,
+    "preloadBackgroundData": false,
+    "autoAudits": false,
+    "useApiHook": true,
+    "showShadowRootInWxmlPanel": true,
+    "useStaticServer": false,
+    "useLanDebug": false,
+    "showES6CompileOption": false,
+    "compileHotReLoad": true,
+    "checkInvalidKey": true,
+    "ignoreDevUnusedFiles": true,
+    "bigPackageSizeSupport": false,
+    "useIsolateContext": true
+  },
+  "libVersion": "3.16.1",
+  "condition": {}
+}

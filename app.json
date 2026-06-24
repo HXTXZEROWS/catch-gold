@@ -1,0 +1,15 @@
+{
+  "pages": [
+    "pages/index/index"
+  ],
+  "window": {
+    "backgroundColor": "#0a0f2c",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#0a0f2c",
+    "navigationBarTitleText": "接宝小游戏",
+    "navigationBarTextStyle": "white",
+    "enablePullDownRefresh": false
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

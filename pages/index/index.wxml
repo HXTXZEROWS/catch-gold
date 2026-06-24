@@ -1,0 +1,58 @@
+<!-- pages/index/index.wxml -->
+<view class="page">
+  <!-- 顶部信息栏：得分 + 最高分 -->
+  <view class="header">
+    <view class="score-item">
+      <text class="score-label">🏆 得分</text>
+      <text class="score-value">{{score}}</text>
+    </view>
+    <view class="score-item best">
+      <text class="score-label">⭐ 最高分</text>
+      <text class="score-value">{{bestScore}}</text>
+    </view>
+  </view>
+
+  <!-- 游戏主区域 -->
+  <view class="stage">
+    <!-- 2D Canvas（微信小程序 2.9.0+ 支持 type="2d"） -->
+    <canvas
+      id="gameCanvas"
+      type="2d"
+      class="game-canvas"
+      style="width:375px;height:500px;"
+      disable-scroll="true"
+      bindtouchstart="onTouchStart"
+      bindtouchmove="onTouchMove"
+      bindtouchend="onTouchEnd"
+      bindtouchcancel="onTouchEnd"
+    ></canvas>
+
+    <!-- 开始页面 -->
+    <view wx:if="{{!isPlaying}}" class="mask">
+      <view class="mask-content">
+        <text class="mask-title">✨ 接宝 ✨</text>
+        <text class="mask-sub">滑动屏幕控制接盘，尽情接住金币吧！</text>
+        <button class="btn btn-main" bindtap="startGame">开始游戏</button>
+      </view>
+    </view>
+
+    <!-- 失败页面 -->
+    <view wx:if="{{isGameOver}}" class="mask">
+      <view class="mask-content gameover">
+        <text class="mask-icon">💔</text>
+        <text class="mask-title fail">挑战失败</text>
+        <text class="mask-score">本局得分：{{score}}</text>
+        <text wx:if="{{isNewRecord}}" class="mask-record">🎉 突破新高！</text>
+        <text wx:if="{{!isNewRecord}}" class="mask-best">历史最高：{{bestScore}}</text>
+        <button class="btn btn-main" bindtap="restartGame">重新挑战</button>
+      </view>
+    </view>
+  </view>
+
+  <!-- 底部操作栏 -->
+  <view class="footer">
+    <button class="btn" bindtap="togglePause">{{isPaused ? '▶ 继续' : '⏸ 暂停'}}</button>
+    <button class="btn" bindtap="restartGame">⟲ 重新开始</button>
+    <button class="btn btn-ghost" bindtap="saveScreenshot">📸 保存截图</button>
+  </view>
+</view>

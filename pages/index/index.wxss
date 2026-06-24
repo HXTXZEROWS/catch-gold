@@ -1,0 +1,191 @@
+/* pages/index/index.wxss —— 深色太空/星空风格 */
+.page {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  padding: 24rpx 24rpx 32rpx;
+  box-sizing: border-box;
+  min-height: 100vh;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  margin-bottom: 20rpx;
+}
+
+.score-item {
+  flex: 1;
+  background: linear-gradient(135deg, rgba(255, 211, 61, 0.12) 0%, rgba(255, 211, 61, 0.03) 100%);
+  border: 2rpx solid rgba(255, 211, 61, 0.35);
+  border-radius: 20rpx;
+  padding: 16rpx 24rpx;
+  margin-right: 16rpx;
+  box-shadow: 0 0 24rpx rgba(255, 211, 61, 0.08) inset;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.score-item.best {
+  margin-right: 0;
+  border-color: rgba(255, 180, 0, 0.45);
+  background: linear-gradient(135deg, rgba(255, 180, 0, 0.15) 0%, rgba(255, 180, 0, 0.02) 100%);
+}
+
+.score-label {
+  font-size: 24rpx;
+  color: #d8def7;
+  letter-spacing: 2rpx;
+}
+
+.score-value {
+  font-size: 52rpx;
+  font-weight: 800;
+  color: #ffd33d;
+  text-shadow: 0 0 20rpx rgba(255, 211, 61, 0.55);
+  line-height: 1;
+  margin-top: 8rpx;
+}
+
+.stage {
+  position: relative;
+  width: 100%;
+  height: 900rpx;
+  border-radius: 28rpx;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at top, rgba(52, 104, 220, 0.35) 0%, rgba(10, 15, 44, 0.9) 60%),
+    linear-gradient(180deg, #0a0f2c 0%, #03061a 100%);
+  box-shadow: 0 10rpx 40rpx rgba(0, 0, 0, 0.65),
+              inset 0 0 80rpx rgba(76, 201, 255, 0.08);
+}
+
+.game-canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.mask {
+  position: absolute;
+  inset: 0;
+  background: rgba(2, 4, 16, 0.72);
+  backdrop-filter: blur(6rpx);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.mask-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 48rpx 56rpx;
+  background: linear-gradient(180deg, rgba(22, 30, 72, 0.95) 0%, rgba(8, 12, 36, 0.95) 100%);
+  border: 2rpx solid rgba(255, 211, 61, 0.45);
+  border-radius: 28rpx;
+  box-shadow: 0 0 60rpx rgba(255, 211, 61, 0.18);
+}
+
+.mask-content.gameover {
+  border-color: rgba(255, 82, 82, 0.5);
+  box-shadow: 0 0 80rpx rgba(255, 82, 82, 0.25);
+}
+
+.mask-icon {
+  font-size: 80rpx;
+  line-height: 1;
+  margin-bottom: 16rpx;
+}
+
+.mask-title {
+  font-size: 56rpx;
+  font-weight: 900;
+  color: #ffd33d;
+  text-shadow: 0 0 24rpx rgba(255, 211, 61, 0.6);
+  letter-spacing: 8rpx;
+}
+
+.mask-title.fail {
+  color: #ff5252;
+  text-shadow: 0 0 24rpx rgba(255, 82, 82, 0.6);
+}
+
+.mask-sub {
+  margin-top: 16rpx;
+  font-size: 26rpx;
+  color: #b8c0e8;
+  letter-spacing: 2rpx;
+}
+
+.mask-score {
+  margin-top: 24rpx;
+  font-size: 34rpx;
+  color: #f3f6ff;
+  letter-spacing: 2rpx;
+}
+
+.mask-record {
+  margin-top: 16rpx;
+  font-size: 30rpx;
+  font-weight: 700;
+  color: #4cc9ff;
+  text-shadow: 0 0 16rpx rgba(76, 201, 255, 0.65);
+}
+
+.mask-best {
+  margin-top: 16rpx;
+  font-size: 28rpx;
+  color: #8b95d0;
+  letter-spacing: 2rpx;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  margin-top: 24rpx;
+  gap: 16rpx;
+}
+
+.btn {
+  flex: 1;
+  min-height: 88rpx;
+  border-radius: 20rpx;
+  border: 2rpx solid rgba(76, 201, 255, 0.4);
+  background: linear-gradient(135deg, rgba(76, 201, 255, 0.18) 0%, rgba(27, 121, 201, 0.25) 100%);
+  color: #e8f2ff;
+  font-size: 30rpx;
+  font-weight: 600;
+  letter-spacing: 4rpx;
+  padding: 0 20rpx;
+  line-height: 88rpx;
+  box-shadow: 0 6rpx 24rpx rgba(76, 201, 255, 0.12);
+}
+
+.btn::after {
+  border: none;
+}
+
+.btn-ghost {
+  border-color: rgba(255, 211, 61, 0.35);
+  background: linear-gradient(135deg, rgba(255, 211, 61, 0.14) 0%, rgba(255, 180, 0, 0.15) 100%);
+  color: #fff5cf;
+}
+
+.btn-main {
+  min-width: 320rpx;
+  margin-top: 32rpx;
+  background: linear-gradient(135deg, #ffd33d 0%, #ffb400 100%);
+  color: #1a1200;
+  border: 2rpx solid #ffb400;
+  box-shadow: 0 8rpx 28rpx rgba(255, 180, 0, 0.45);
+}
+
+.btn:active {
+  transform: translateY(2rpx);
+  opacity: 0.9;
+}

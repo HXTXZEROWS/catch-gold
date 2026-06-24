@@ -1,0 +1,17 @@
+/* app.wxss —— 全局样式：深色太空主题 */
+page {
+  --bg-0: #03061a;
+  --bg-1: #0a0f2c;
+  --bg-2: #121a42;
+  --gold: #ffd33d;
+  --gold-2: #ffb400;
+  --plate: #4cc9ff;
+  --plate-2: #1b79c9;
+  --text: #f3f6ff;
+  --muted: #aab4d9;
+
+  background: radial-gradient(ellipse at top, #121a42 0%, #0a0f2c 55%, #03061a 100%);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", sans-serif;
+  min-height: 100vh;
+}
